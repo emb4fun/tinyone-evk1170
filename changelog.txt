@@ -1,0 +1,20 @@
+***************************************************************************
+* Project: tinyone-evk1170
+* Name   : "A small embedded DHCP and SNTP server"
+* Target : i.MX RT1170 Evaluation Kit
+* Version: 20230313
+***************************************************************************
+* Tools  : SEGGER Embedded Studio for ARM v7.12
+*          NXP MIMXRT1176 CPU Support Package v2.10
+***************************************************************************
+* URL    : https://www.emb4fun.de/projects/tone/index.html
+***************************************************************************
+* Note:  : The configuration "SDRAM Release" must be used for a release
+*          version.
+***************************************************************************
+
+= Version 1.10 / 1.10, 13.03.2023
+   * First version for GitHub.
+   * Based on tinyone-ea1062 11.03.2023
+
+***************************************************************************

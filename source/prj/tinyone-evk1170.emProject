@@ -1,0 +1,385 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="tinyone-evk1170" target="8" version="2">
+  <configuration Name="Debug" hidden="Yes" />
+  <configuration Name="Flash" hidden="Yes" />
+  <configuration Name="Flash to SDRAM" hidden="Yes" />
+  <configuration
+    Name="Flash to SDRAM Debug"
+    inherited_configurations="Flash to SDRAM;Debug" />
+  <configuration
+    Name="Flash to SDRAM Release"
+    inherited_configurations="Flash to SDRAM;Release" />
+  <configuration Name="Release" hidden="Yes" />
+  <configuration Name="SDRAM" hidden="Yes" />
+  <configuration Name="SDRAM Debug" inherited_configurations="SDRAM;Debug" />
+  <configuration
+    Name="SDRAM Release"
+    inherited_configurations="SDRAM;Release" />
+  <configuration Name="TCM" hidden="Yes" />
+  <project Name="tinyone-evk1170">
+    <configuration
+      JLinkScriptFileName="$(ProjectDir)/evkmimxrt1170_connect_cm4_cm7side.jlinkscript"
+      LIBRARY_IO_TYPE="RTT"
+      Name="Common"
+      Target="MIMXRT1176DVMAA_cm7"
+      WARNING_LEVEL="4 (All)"
+      arm_architecture="v7EM"
+      arm_compiler_variant="gcc"
+      arm_core_type="Cortex-M7"
+      arm_endian="Little"
+      arm_fp_abi="Hard"
+      arm_fpu_type="FPv5-D16"
+      arm_linker_heap_size="256"
+      arm_linker_process_stack_size="2048"
+      arm_linker_stack_size="2048"
+      arm_rtl_variant="SEGGER"
+      arm_simulator_memory_simulation_parameter="RAM;0x00000000;0x00080000;RAM;0x20000000;0x00080000;RAM;0x20200000;0x00040000;RAM;0x20240000;0x00080000;RAM;0x202C0000;0x00080000;RAM;0x20340000;0x00010000;RAM;0x20350000;0x00010000;RAM;0x20360000;0x00020000;RAM;0x20380000;0x00080000"
+      arm_target_debug_interface_type="ADIv5"
+      arm_target_device_name="MIMXRT1176xxxA_M7"
+      arm_target_interface_type="SWD"
+      build_intermediate_directory="$(Configuration)"
+      build_output_directory="$(Configuration)"
+      c_additional_options="-Wno-aggressive-loop-optimizations"
+      c_preprocessor_definitions="__NO_SYSTEM_CLK_UPDATE;INITIALIZE_STACK;CPU_MIMXRT1176DVMAA_cm7;__MIMXRT1176_FAMILY;USE_SDRAM;USE_BOARD_RT1170EVK;RTOS_TCTS;NO_GZIP;FSL_SDK_ENABLE_DRIVER_CACHE_CONTROL=1;FSL_FEATURE_PHYKSZ8081_USE_RMII50M_MODE;CACHE_MODE_WRITE_THROUGH=1;SD_ENABLED;BOARD_SDMMC_SD_CD_TYPE=kSD_DetectCardByHostDATA3"
+      c_user_include_directories="..\\incprj;..\\common\\inc;..\\common\\library\\tcts\\inc;..\\common\\library\\tal_rt1170evk\\board\\rt1170evk\\inc;..\\common\\library\\tal_rt1170evk\\core\\inc;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\cmsis\\core;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\cmsis\\device;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\drivers;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\drivers\\cm7;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\inc;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\components\\lists;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\components\\osa;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\components\\gpio;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\components\\phy;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\components\\silicon_id;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\middleware\\sdmmc\\common;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\middleware\\sdmmc\\host\\usdhc;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\middleware\\sdmmc\\osa;..\\common\\library\\tal_rt1170evk\\cpu\\nxp\\imxrt1170\\sdk\\v2121\\middleware\\sdmmc\\sd;..\\common\\library\\ipapi\\inc;..\\common\\library\\ipapi\\phy;..\\common\\library\\ipweb\\inc;..\\common\\library\\jsmn;..\\common\\library\\lwip\\src\\include;..\\common\\library\\lwip\\src\\include\\ipv4;..\\common\\library\\lwip_port\\dev;..\\common\\library\\lwip_port\\os;..\\common\\library\\uhttp\\inc;..\\common\\library\\uhttp\\addon\\inc;..\\common\\library\\fsapi\\inc;..\\common\\library\\fatfs\\src;..\\common\\library\\tlsf\\v246\\src;..\\common\\library\\adler32;..\\common\\library\\base32;..\\common\\library\\minini\\dev;..\\common\\library\\mbedtls\\include;..\\common\\library\\zlib;..\\inc"
+      debug_register_definition_file="$(ProjectDir)/MIMXRT1176_cm7_Registers.xml"
+      debug_stack_pointer_start="__stack_end__"
+      debug_start_from_entry_point_symbol="Yes"
+      debug_target_connection="J-Link"
+      gcc_entry_point="Reset_Handler"
+      gcc_main_return_type="Yes"
+      gcc_main_warning="Yes"
+      gcc_strict_prototypes_warning="Yes"
+      gcc_uninitialized_variables_warning="Yes"
+      gcc_unused_variable_warning="Yes"
+      link_linker_script_file="$(ProjectDir)/MIMXRT1176_M7_RAM.icf"
+      linker_memory_map_file="$(ProjectDir)/MIMXRT1176DVMAA_EVK_cm7_MemoryMap_NoCache_OCRAM.xml"
+      linker_printf_fmt_level="long"
+      linker_printf_fp_enabled="Float"
+      linker_printf_width_precision_supported="Yes"
+      macros="DeviceHeaderFile=$(PackagesDir)/MIMXRT1176/Device/Include/fsl_device_registers.h;DeviceSystemFile=$(PackagesDir)/MIMXRT1176/Device/Source/system_MIMXRT1176_cm7.c;DeviceVectorsFile=$(PackagesDir)/MIMXRT1176/Source/MIMXRT1176_cm7_Vectors.s;DeviceFamily=MIMXRT1176;Target=MIMXRT1176DVMAA_cm7"
+      project_directory=""
+      project_type="Executable"
+      target_reset_script="Reset();"
+      target_script_file="$(ProjectDir)/MIMXRT1176_Target.js"
+      target_trace_initialize_script="EnableTrace(&quot;$(TraceInterfaceType)&quot;)" />
+    <configuration Name="Debug" c_preprocessor_definitions="__DEBUG__" />
+    <configuration
+      Name="Flash"
+      c_preprocessor_definitions="__FLASH__;__VECTORS_IN_RAM;XIP_EXTERNAL_FLASH=1;XIP_BOOT_HEADER_ENABLE=1;XIP_BOOT_HEADER_DCD_ENABLE=1"
+      linker_section_placement_file="$(ProjectDir)/flash_placement.xml" />
+    <configuration
+      Name="Flash to SDRAM"
+      c_preprocessor_definitions="__FLASH_2_SDRAM__;__VECTORS_IN_RAM;XIP_EXTERNAL_FLASH=1;XIP_BOOT_HEADER_ENABLE=1;XIP_BOOT_HEADER_DCD_ENABLE=1"
+      linker_section_placement_file="$(ProjectDir)/flash_to_sdram_placement.xml" />
+    <configuration
+      Name="Release"
+      c_preprocessor_definitions="__RELEASE__"
+      gcc_optimization_level="Level 3 for more speed" />
+    <configuration
+      Name="SDRAM"
+      c_preprocessor_definitions="__SDRAM__;__VTOR_CONFIG"
+      linker_section_placement_file="$(ProjectDir)/tcm_sdram_placement.xml" />
+    <configuration
+      Name="SDRAM Release"
+      c_preprocessor_definitions="ENABLED_WDOG"
+      linker_output_format="bin" />
+    <configuration
+      Name="TCM"
+      c_preprocessor_definitions="__TCM__;__VTOR_CONFIG"
+      linker_section_placement_file="$(ProjectDir)/tcm_placement.xml" />
+    <folder Name="Source Files">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <folder Name="common">
+        <folder Name="library">
+          <folder Name="adler32">
+            <file file_name="../common/library/adler32/adler32.c" />
+          </folder>
+          <folder Name="base32">
+            <file file_name="../common/library/base32/base32.c" />
+          </folder>
+          <folder Name="fatfs">
+            <file file_name="../common/library/fatfs/src/ff.c" />
+            <file file_name="../common/library/fatfs/src/ffunicode.c" />
+          </folder>
+          <folder Name="fsapi">
+            <file file_name="../common/library/fsapi/src/fs_fatfs.c" />
+            <file file_name="../common/library/fsapi/src/fs_romfs.c" />
+            <file file_name="../common/library/fsapi/src/fs_xfile.c" />
+            <file file_name="../common/library/fsapi/src/fsapi.c" />
+          </folder>
+          <folder Name="ipapi">
+            <file file_name="../common/library/ipapi/src/ip_dhcp.c" />
+            <file file_name="../common/library/ipapi/src/ip_dhcpserver.c" />
+            <file file_name="../common/library/ipapi/src/ip_dns.c" />
+            <file file_name="../common/library/ipapi/src/ip_mdns.c" />
+            <file file_name="../common/library/ipapi/src/ip_sntp.c" />
+            <file file_name="../common/library/ipapi/src/ip_sntpserver.c" />
+            <file file_name="../common/library/ipapi/src/ip_syslog.c" />
+            <file file_name="../common/library/ipapi/src/ip_tnp.c" />
+            <file file_name="../common/library/ipapi/src/ipstack.c" />
+          </folder>
+          <folder Name="ipweb">
+            <file file_name="../common/library/ipweb/src/ipweb.c" />
+            <file file_name="../common/library/ipweb/src/web_api.c" />
+            <file file_name="../common/library/ipweb/src/web_cgi.c" />
+            <file file_name="../common/library/ipweb/src/web_json.c" />
+            <file file_name="../common/library/ipweb/src/web_login.c" />
+            <file file_name="../common/library/ipweb/src/web_login_dummy.c" />
+            <file file_name="../common/library/ipweb/src/web_sid.c" />
+            <file file_name="../common/library/ipweb/src/web_sid_dummy.c" />
+            <file file_name="../common/library/ipweb/src/web_ssi.c" />
+            <file file_name="../common/library/ipweb/src/web_ssl.c" />
+            <file file_name="../common/library/ipweb/src/web_user.c" />
+          </folder>
+          <folder Name="lwip">
+            <folder Name="api">
+              <file file_name="../common/library/lwip/src/api/api_lib.c" />
+              <file file_name="../common/library/lwip/src/api/api_msg.c" />
+              <file file_name="../common/library/lwip/src/api/err.c" />
+              <file file_name="../common/library/lwip/src/api/netbuf.c" />
+              <file file_name="../common/library/lwip/src/api/netdb.c" />
+              <file file_name="../common/library/lwip/src/api/netifapi.c" />
+              <file file_name="../common/library/lwip/src/api/sockets.c" />
+              <file file_name="../common/library/lwip/src/api/tcpip.c" />
+            </folder>
+            <folder Name="core">
+              <folder Name="ipv4">
+                <file file_name="../common/library/lwip/src/core/ipv4/acd.c" />
+                <file file_name="../common/library/lwip/src/core/ipv4/autoip.c" />
+                <file file_name="../common/library/lwip/src/core/ipv4/dhcp.c" />
+                <file file_name="../common/library/lwip/src/core/ipv4/etharp.c" />
+                <file file_name="../common/library/lwip/src/core/ipv4/icmp.c" />
+                <file file_name="../common/library/lwip/src/core/ipv4/igmp.c" />
+                <file file_name="../common/library/lwip/src/core/ipv4/ip4.c" />
+                <file file_name="../common/library/lwip/src/core/ipv4/ip4_addr.c" />
+                <file file_name="../common/library/lwip/src/core/ipv4/ip4_frag.c" />
+              </folder>
+              <file file_name="../common/library/lwip/src/core/def.c" />
+              <file file_name="../common/library/lwip/src/core/dns.c" />
+              <file file_name="../common/library/lwip/src/core/inet_chksum.c" />
+              <file file_name="../common/library/lwip/src/core/init.c" />
+              <file file_name="../common/library/lwip/src/core/ip.c" />
+              <file file_name="../common/library/lwip/src/core/mem.c" />
+              <file file_name="../common/library/lwip/src/core/memp.c" />
+              <file file_name="../common/library/lwip/src/core/netif.c" />
+              <file file_name="../common/library/lwip/src/core/pbuf.c" />
+              <file file_name="../common/library/lwip/src/core/stats.c" />
+              <file file_name="../common/library/lwip/src/core/tcp.c" />
+              <file file_name="../common/library/lwip/src/core/tcp_in.c" />
+              <file file_name="../common/library/lwip/src/core/tcp_out.c" />
+              <file file_name="../common/library/lwip/src/core/timeouts.c" />
+              <file file_name="../common/library/lwip/src/core/udp.c" />
+            </folder>
+            <folder Name="netif">
+              <file file_name="../common/library/lwip/src/netif/ethernet.c" />
+            </folder>
+          </folder>
+          <folder Name="lwip_port">
+            <folder Name="dev">
+              <file file_name="../common/library/lwip_port/dev/ethernetif.c" />
+            </folder>
+            <folder Name="os">
+              <file file_name="../common/library/lwip_port/os/sys_arch_tcts.c" />
+            </folder>
+          </folder>
+          <folder Name="mbedtls">
+            <file file_name="../common/library/mbedtls/library/aes.c" />
+            <file file_name="../common/library/mbedtls/library/asn1parse.c" />
+            <file file_name="../common/library/mbedtls/library/asn1write.c" />
+            <file file_name="../common/library/mbedtls/library/base64.c" />
+            <file file_name="../common/library/mbedtls/library/bignum.c" />
+            <file file_name="../common/library/mbedtls/library/ccm.c" />
+            <file file_name="../common/library/mbedtls/library/cipher.c" />
+            <file file_name="../common/library/mbedtls/library/cipher_wrap.c" />
+            <file file_name="../common/library/mbedtls/library/constant_time.c" />
+            <file file_name="../common/library/mbedtls/library/ctr_drbg.c" />
+            <file file_name="../common/library/mbedtls/library/debug.c" />
+            <file file_name="../common/library/mbedtls/library/ecdh.c" />
+            <file file_name="../common/library/mbedtls/library/ecdsa.c" />
+            <file file_name="../common/library/mbedtls/library/ecp.c" />
+            <file file_name="../common/library/mbedtls/library/ecp_curves.c" />
+            <file file_name="../common/library/mbedtls/library/entropy.c" />
+            <file file_name="../common/library/mbedtls/library/gcm.c" />
+            <file file_name="../common/library/mbedtls/library/hmac_drbg.c" />
+            <file file_name="../common/library/mbedtls/library/md.c" />
+            <file file_name="../common/library/mbedtls/library/oid.c" />
+            <file file_name="../common/library/mbedtls/library/pem.c" />
+            <file file_name="../common/library/mbedtls/library/pk.c" />
+            <file file_name="../common/library/mbedtls/library/pk_wrap.c" />
+            <file file_name="../common/library/mbedtls/library/pkcs12.c" />
+            <file file_name="../common/library/mbedtls/library/pkcs5.c" />
+            <file file_name="../common/library/mbedtls/library/pkparse.c" />
+            <file file_name="../common/library/mbedtls/library/pkwrite.c" />
+            <file file_name="../common/library/mbedtls/library/platform.c" />
+            <file file_name="../common/library/mbedtls/library/platform_util.c" />
+            <file file_name="../common/library/mbedtls/library/sha1.c" />
+            <file file_name="../common/library/mbedtls/library/sha256.c" />
+            <file file_name="../common/library/mbedtls/library/ssl_cache.c" />
+            <file file_name="../common/library/mbedtls/library/ssl_ciphersuites.c" />
+            <file file_name="../common/library/mbedtls/library/ssl_cli.c" />
+            <file file_name="../common/library/mbedtls/library/ssl_cookie.c" />
+            <file file_name="../common/library/mbedtls/library/ssl_msg.c" />
+            <file file_name="../common/library/mbedtls/library/ssl_srv.c" />
+            <file file_name="../common/library/mbedtls/library/ssl_ticket.c" />
+            <file file_name="../common/library/mbedtls/library/ssl_tls.c" />
+            <file file_name="../common/library/mbedtls/library/x509.c" />
+            <file file_name="../common/library/mbedtls/library/x509_create.c" />
+            <file file_name="../common/library/mbedtls/library/x509_crl.c" />
+            <file file_name="../common/library/mbedtls/library/x509_crt.c" />
+            <file file_name="../common/library/mbedtls/library/x509_csr.c" />
+            <file file_name="../common/library/mbedtls/library/x509write_csr.c" />
+          </folder>
+          <folder Name="minini">
+            <file file_name="../common/library/minini/dev/minIni.c" />
+          </folder>
+          <folder Name="tal">
+            <folder Name="board">
+              <folder Name="xip">
+                <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/xip/dcd.c" />
+                <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/xip/evkmimxrt1170_flexspi_nor_config.c" />
+                <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/xip/fsl_flexspi_nor_boot.c" />
+              </folder>
+              <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/board.c" />
+              <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/clock_config.c" />
+              <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/eth_config.c" />
+              <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/fatfs_diskio.c" />
+              <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/pin_mux.c" />
+              <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/sdmmc_config.c" />
+              <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/talboard.c" />
+              <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/talgpio.c" />
+              <file file_name="../common/library/tal_rt1170evk/board/rt1170evk/src/talled.c" />
+            </folder>
+            <folder Name="core">
+              <file file_name="../common/library/tal_rt1170evk/core/src/tal.c" />
+              <file file_name="../common/library/tal_rt1170evk/core/src/talcom.c" />
+              <file file_name="../common/library/tal_rt1170evk/core/src/taldebug.c" />
+              <file file_name="../common/library/tal_rt1170evk/core/src/talmem.c" />
+              <file file_name="../common/library/tal_rt1170evk/core/src/talmisc.c" />
+            </folder>
+            <folder Name="cpu">
+              <folder Name="sdk">
+                <folder Name="cmsis">
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/cmsis/device/system_MIMXRT1176_cm7.c">
+                    <configuration
+                      Name="Common"
+                      default_code_section=".init"
+                      default_const_section=".init_rodata" />
+                  </file>
+                </folder>
+                <folder Name="components">
+                  <folder Name="gpio">
+                    <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/components/gpio/fsl_adapter_igpio.c" />
+                  </folder>
+                  <folder Name="phy">
+                    <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/components/phy/mdio/enet/fsl_enet_mdio.c" />
+                    <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/components/phy/device/phyksz8081/fsl_phyksz8081.c" />
+                    <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/components/phy/device/phyrtl8211f/fsl_phyrtl8211f.c" />
+                  </folder>
+                  <folder Name="silicon_id">
+                    <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/components/silicon_id/fsl_silicon_id.c" />
+                  </folder>
+                </folder>
+                <folder Name="drivers">
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_anatop_ai.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_caam.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/cm7/fsl_cache.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_clock.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_common.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_common_arm.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_dcdc.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_enet.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_gpio.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_lpuart.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_pmu.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_usdhc.c" />
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/drivers/fsl_wdog.c" />
+                </folder>
+                <folder Name="osa_port">
+                  <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/osa_port/fsl_os_abstraction_tcts.c" />
+                </folder>
+                <folder Name="sdmmc">
+                  <folder Name="common">
+                    <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/middleware/sdmmc/common/fsl_sdmmc_common.c" />
+                  </folder>
+                  <folder Name="host">
+                    <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/middleware/sdmmc/host/usdhc/non_blocking/fsl_sdmmc_host.c" />
+                  </folder>
+                  <folder Name="osa">
+                    <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/middleware/sdmmc/osa/fsl_sdmmc_osa.c" />
+                  </folder>
+                  <folder Name="sd">
+                    <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/sdk/v2121/middleware/sdmmc/sd/fsl_sd.c" />
+                  </folder>
+                </folder>
+              </folder>
+              <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/src/talcpu.c" />
+              <file file_name="../common/library/tal_rt1170evk/cpu/nxp/imxrt1170/src/talcpu_com.c" />
+            </folder>
+          </folder>
+          <folder Name="tcts">
+            <file file_name="../common/library/tcts/src/tcts.c" />
+          </folder>
+          <folder Name="time">
+            <file file_name="../common/library/time/time.c" />
+            <file file_name="../common/library/time/time64.c" />
+          </folder>
+          <folder Name="uhttp">
+            <folder Name="modules">
+              <file file_name="../common/library/uhttp/src/modules/mod_auth_basic.c" />
+              <file file_name="../common/library/uhttp/src/modules/mod_cgi_func.c" />
+              <file file_name="../common/library/uhttp/src/modules/mod_redir.c" />
+              <file file_name="../common/library/uhttp/src/modules/mod_ssi.c" />
+            </folder>
+            <folder Name="os">
+              <file file_name="../common/library/uhttp/src/os/tcts/rfctime.c" />
+              <file file_name="../common/library/uhttp/src/os/tcts/streamio.c" />
+            </folder>
+            <file file_name="../common/library/uhttp/src/envinit.c" />
+            <file file_name="../common/library/uhttp/src/envreg.c" />
+            <file file_name="../common/library/uhttp/src/envvars.c" />
+            <file file_name="../common/library/uhttp/src/mediatypes.c" />
+            <file file_name="../common/library/uhttp/src/mtreg.c" />
+            <file file_name="../common/library/uhttp/src/responses.c" />
+            <file file_name="../common/library/uhttp/src/uhttpd.c" />
+            <file file_name="../common/library/uhttp/src/utils.c" />
+          </folder>
+          <folder Name="zlib">
+            <file file_name="../common/library/zlib/compress.c" />
+            <file file_name="../common/library/zlib/deflate.c" />
+            <file file_name="../common/library/zlib/infback.c" />
+            <file file_name="../common/library/zlib/inffast.c" />
+            <file file_name="../common/library/zlib/inflate.c" />
+            <file file_name="../common/library/zlib/inftrees.c" />
+            <file file_name="../common/library/zlib/trees.c" />
+            <file file_name="../common/library/zlib/uncompr.c" />
+            <file file_name="../common/library/zlib/zutil.c" />
+          </folder>
+        </folder>
+        <folder Name="src">
+          <file file_name="../common/src/cert.c" />
+          <file file_name="../common/src/etc.c" />
+          <file file_name="../common/src/fs.c" />
+          <file file_name="../common/src/iperf.c" />
+          <file file_name="../common/src/minglue.c" />
+          <file file_name="../common/src/nvm.c" />
+          <file file_name="../common/src/terminal.c" />
+          <file file_name="../common/src/xbin.c" />
+        </folder>
+        <folder Name="webpage">
+          <file file_name="../common/webpage/romfs_data.c" />
+        </folder>
+      </folder>
+      <folder Name="src">
+        <file file_name="../src/elca_client.c" />
+        <file file_name="../src/main.c" />
+        <file file_name="../src/xmempool.c" />
+      </folder>
+    </folder>
+    <folder Name="System Files">
+      <file file_name="MIMXRT1176_Startup.s" />
+      <file file_name="MIMXRT1176_cm7_Vectors.s" />
+      <file file_name="thumb_crt0.s" />
+    </folder>
+  </project>
+</solution>

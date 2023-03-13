@@ -1,0 +1,13 @@
+
+SDK_2.12.1_EVK-MIMXRT1170
+
+================================================================
+ATTENTION: It is also not allowed to simply use a newer version 
+because a change has been made in "fsl_common_arm.h".
+
+Here the define AT_QUICKACCESS_SECTION_CODE was adjusted for 
+SEGGER Embedded Studio.
+
+The file fsl_sd.c, here function SD_IsCardPresent was changed
+too.
+================================================================
