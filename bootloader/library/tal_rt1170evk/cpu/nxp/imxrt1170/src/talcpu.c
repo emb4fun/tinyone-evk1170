@@ -331,6 +331,8 @@ void tal_CPURngInit (void)
    {
       bCAAMInitDone = 1;
 
+      CAAM_GetDefaultConfig(&caamConfig);
+
       /*
        * setup memory for job ring interfaces. Can be in system memory or
        * CAAM's secure memory. Although this driver example only uses job
@@ -375,24 +377,54 @@ void tal_CPURngDeInit (void)
 /*                                                                       */
 /*  In    : pData, dSize                                                 */
 /*  Out   : pData                                                        */
-/*  Return: TALOK / TAL_ERROR                                            */
+/*  Return: TAL_OK / TAL_ERROR                                           */
 /*************************************************************************/
 TAL_RESULT tal_CPURngHardwarePoll (uint8_t *pData, uint32_t dSize)
 {
-   TAL_RESULT    Error = TAL_ERROR;
-   status_t      Status;
-   caam_handle_t caamHandle;
+   TAL_RESULT      Error = TAL_ERROR;
+   status_t        Status;
+   caam_handle_t   caamHandle;
+   static uint32_t TempData[4] __attribute__ ((section ("OCRAM1"),aligned(8)));
 
-   if (1 == bCAAMInitDone)
+   if ((1 == bCAAMInitDone) && (pData != NULL) && (dSize != 0))
    {
       caamHandle.jobRing = kCAAM_JobRing0;
 
-      Status = CAAM_RNG_GetRandomData(CAAM, &caamHandle, kCAAM_RngStateHandle0,
-                                      pData, dSize, kCAAM_RngDataAny, NULL);
+      /*
+       * The data pointer for the CAAM must not be in TCM memory.
+       * See also Errata ERR050396. Therefore, TempData, which resides
+       * in OCRAM, is used to receive blocks of random numbers.
+       */
+      while (dSize > 0)
+      {
+         Status = CAAM_RNG_GetRandomData(CAAM, &caamHandle, kCAAM_RngStateHandle0,
+                                         (uint8_t*)TempData, sizeof(TempData), kCAAM_RngDataAny, NULL);
+         if (kStatus_Success == Status)
+         {
+            if (dSize >= sizeof(TempData))
+            {
+               memcpy(pData, TempData, sizeof(TempData));
+               pData += sizeof(TempData);
+               dSize -= sizeof(TempData);
+            }
+            else
+            {
+               memcpy(pData, TempData, dSize);
+               dSize = 0;
+            }
+         }
+         else
+         {
+            /* Error */
+            break;
+         }
+      }
+
       if (kStatus_Success == Status)
       {
          Error = TAL_OK;
       }
+
    }
 
    return(Error);

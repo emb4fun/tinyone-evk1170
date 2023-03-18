@@ -1,6 +1,7 @@
 <!DOCTYPE Linker_Placement_File>
 <Root name="SDRAM Section Placement">
   <MemorySegment name="$(ITCM_NAME:ITCM)">
+    <ProgramSection alignment="0x1000" load="Yes" name=".vectors" />
     <ProgramSection alignment="4"      load="No"  name=".fast_run" />
   </MemorySegment>
   <MemorySegment name="$(DTCM_NAME:DTCM)">
@@ -8,7 +9,6 @@
     <ProgramSection alignment="8"      load="No"  name=".stack_process" size="__STACKSIZE_PROCESS__" />
   </MemorySegment>
   <MemorySegment name="$(SDRAM_NAME:SDRAM)">
-    <ProgramSection alignment="0x1000"load="Yes" name=".vectors" />
     <ProgramSection alignment="4"      load="Yes" name=".init" />
     <ProgramSection alignment="4"      load="Yes" name=".init_rodata" />    
     <ProgramSection alignment="4"      load="Yes" name=".text" />
@@ -23,6 +23,12 @@
     <ProgramSection alignment="4"      load="No"  name=".bss" />
     <ProgramSection alignment="4"      load="No"  name=".non_init" />
     <ProgramSection alignment="4"      load="No"  name=".heap" size="__HEAPSIZE__" />
+  </MemorySegment>
+  <MemorySegment name="OCRAM1">
+    <ProgramSection alignment="4"      load="No"  name="OCRAM1" />
+  </MemorySegment>
+  <MemorySegment name="OCRAM2">
+    <ProgramSection alignment="4"      load="No"  name="OCRAM2" />
   </MemorySegment>
   <MemorySegment name="NonCache">
     <ProgramSection alignment="4"      load="No"  name="NonCacheable" />

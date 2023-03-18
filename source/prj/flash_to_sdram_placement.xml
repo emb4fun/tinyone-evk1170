@@ -9,13 +9,13 @@
     <ProgramSection alignment="0x1000" load="Yes" name=".vectors" />
     <ProgramSection alignment="4"      load="Yes" name=".init" />
     <ProgramSection alignment="4"      load="Yes" name=".init_rodata" />
-    <ProgramSection alignment="4"      load="Yes" name=".text"       runin=".text_run" />
-    <ProgramSection alignment="4"      load="Yes" name=".dtors"      runin=".dtors_run"  />
-    <ProgramSection alignment="4"      load="Yes" name=".ctors"      runin=".ctors_run" />
-    <ProgramSection alignment="4"      load="Yes" name=".rodata"     runin=".rodata_run" />
-    <ProgramSection alignment="4"      load="Yes" name=".fast"       runin=".fast_run" />
-    <ProgramSection alignment="4"      load="Yes" name=".data"       runin=".data_run" />
-    <ProgramSection alignment="4"      load="Yes" name=".tdata"      runin=".tdata_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".text"   runin=".text_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".dtors"  runin=".dtors_run"  />
+    <ProgramSection alignment="4"      load="Yes" name=".ctors"  runin=".ctors_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".rodata" runin=".rodata_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".fast"   runin=".fast_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".data"   runin=".data_run" />
+    <ProgramSection alignment="4"      load="Yes" name=".tdata"  runin=".tdata_run" />
   </MemorySegment>
   <MemorySegment name="$(ITCM_NAME:ITCM)">
     <ProgramSection alignment="0x100"  load="No" name=".vectors_ram" />
@@ -36,6 +36,12 @@
     <ProgramSection alignment="4"      load="No" name=".tdata_run" />
     <ProgramSection alignment="4"      load="No" name=".bss" />
     <ProgramSection alignment="4"      load="No" name=".non_init" />
+  </MemorySegment>
+  <MemorySegment name="OCRAM1">
+    <ProgramSection alignment="4"      load="No"  name="OCRAM1" />
+  </MemorySegment>
+  <MemorySegment name="OCRAM2">
+    <ProgramSection alignment="4"      load="No"  name="OCRAM2" />
   </MemorySegment>
   <MemorySegment name="NonCache">
     <ProgramSection alignment="4"      load="No" name="NonCacheable" />

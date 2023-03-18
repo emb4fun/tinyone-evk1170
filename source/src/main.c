@@ -298,7 +298,7 @@ static void EthernetInit (void)
 /*************************************************************************/
 static void EntropyInit (void)
 {
-   uint64_t Seed1, Seed2;
+   uint32_t Seed1, Seed2;
 
    Seed1 = 0;
    Seed2 = 0;
@@ -309,6 +309,9 @@ static void EntropyInit (void)
    tal_CPURngInit();
    tal_CPURngHardwarePoll((uint8_t*)&Seed1, sizeof(Seed1));
    tal_CPURngHardwarePoll((uint8_t*)&Seed2, sizeof(Seed2));
+
+   //term_printf("Seed1: %0X\r\n", Seed1);
+   //term_printf("Seed2: %0X\r\n", Seed2);
 
    (void)Seed1;
    (void)Seed2;

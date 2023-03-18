@@ -77,7 +77,7 @@
   <Watches active="0" update="Never"/>
  </Watch4>
  <Files>
-  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="624" useTextEdit="1" path="../src/main.c" left="0" selected="1" top="553" codecName="Default"/>
+  <SessionOpenFile windowGroup="DockEditLeft" x="5" y="313" useTextEdit="1" path="../src/main.c" left="0" selected="1" top="288" codecName="Default"/>
  </Files>
- <EMStudioWindow activeProject="tinyone-evk1170" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="SDRAM Debug" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
+ <EMStudioWindow activeProject="tinyone-evk1170" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="SDRAM Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="" autoConnectCapabilities="3711"/>
 </session>
