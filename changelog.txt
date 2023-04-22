@@ -2,7 +2,7 @@
 * Project: tinyone-evk1170
 * Name   : "A small embedded DHCP and SNTP server"
 * Target : i.MX RT1170 Evaluation Kit
-* Version: 20230318
+* Version: 20230422
 ***************************************************************************
 * Tools  : SEGGER Embedded Studio for ARM v7.12
 *          NXP MIMXRT1176 CPU Support Package v2.10
@@ -12,6 +12,10 @@
 * Note:  : The configuration "SDRAM Release" must be used for a release
 *          version.
 ***************************************************************************
+
+= 22.04.2023
+   * Updated MbedTLS to v2.28.3
+   * Used SEGGER Embedded Studio for ARM v7.12a.
 
 = 18.03.2023
    * Reworked RNG handling
